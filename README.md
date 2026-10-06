@@ -1,4 +1,4 @@
-# 🍪 KuKis Cookies — Landing Page
+# 🍪 KuKis Cookies - Landing Page
 
 Landing page responsif dan modern untuk brand cookies fiktif **"KuKis Cookies"**, dibuat menggunakan **HTML5**, **Tailwind CSS**, dan **JavaScript**. 
 
