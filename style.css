@@ -1,0 +1,22 @@
+/*
+ * style.css — KuKis Cookies Landing Page
+ *
+ * File ini berisi HANYA custom CSS yang tidak bisa
+ * atau tidak efisien jika ditulis dengan utility class Tailwind.
+ * Semua styling utama sudah menggunakan Tailwind langsung di HTML.
+ */
+
+
+/* ===== REVEAL ON SCROLL ===== */
+/* State awal untuk elemen yang akan muncul saat scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* State aktif setelah elemen masuk viewport */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

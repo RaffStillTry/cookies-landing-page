@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KuKis Cookies</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cookie: {
+              50:  '#fdf8f0',
+              100: '#f9edda',
+              200: '#f0d6b0',
+              300: '#e6bb80',
+              400: '#d99d52',
+              500: '#c8832f',
+              600: '#a86924',
+              700: '#8a5220',
+              800: '#6e401e',
+              900: '#5a351c',
+            }
+          },
+          fontFamily: {
+            sans:  ['"Inter"', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="font-sans bg-cookie-50 text-stone-800 antialiased">
+
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <a href="#home" class="flex items-center gap-2 group">
+          <span class="text-3xl transition-transform duration-300 group-hover:rotate-12">🍪</span>
+          <span class="text-xl lg:text-2xl font-serif font-bold text-cookie-800 tracking-tight">
+            KuKis <span class="text-cookie-500">Cookies.</span>
+          </span>
+        </a>
+
+        <ul class="hidden md:flex items-center gap-1 lg:gap-2">
+          <li><a href="#home"    class="px-4 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-cookie-700 hover:bg-cookie-100 transition-all duration-200">Home</a></li>
+          <li><a href="#menu"    class="px-4 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-cookie-700 hover:bg-cookie-100 transition-all duration-200">Menu</a></li>
+          <li><a href="#about"   class="px-4 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-cookie-700 hover:bg-cookie-100 transition-all duration-200">About</a></li>
+          <li><a href="#reviews" class="px-4 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-cookie-700 hover:bg-cookie-100 transition-all duration-200">Reviews</a></li>
+        </ul>
+
+        <div class="flex items-center gap-3">
+          <a href="#menu" class="hidden sm:inline-flex items-center gap-2 bg-cookie-700 hover:bg-cookie-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cookie-700/25 active:scale-95">
+            Order Now
+          </a>
+
+          <button id="hamburger" class="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-cookie-100 transition-colors" aria-label="Toggle menu">
+            <div class="flex flex-col gap-1.5 w-5">
+              <span id="bar1" class="block h-0.5 w-full bg-stone-700 rounded transition-all duration-300 origin-center"></span>
+              <span id="bar2" class="block h-0.5 w-full bg-stone-700 rounded transition-all duration-300"></span>
+              <span id="bar3" class="block h-0.5 w-full bg-stone-700 rounded transition-all duration-300 origin-center"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/95 backdrop-blur-md">
+      <div class="px-4 pb-4 pt-2 space-y-1">
+        <a href="#home"    class="mobile-link block px-4 py-3 rounded-xl text-stone-600 hover:text-cookie-700 hover:bg-cookie-50 font-medium transition-all duration-200">Home</a>
+        <a href="#menu"    class="mobile-link block px-4 py-3 rounded-xl text-stone-600 hover:text-cookie-700 hover:bg-cookie-50 font-medium transition-all duration-200">Menu</a>
+        <a href="#about"   class="mobile-link block px-4 py-3 rounded-xl text-stone-600 hover:text-cookie-700 hover:bg-cookie-50 font-medium transition-all duration-200">About</a>
+        <a href="#reviews" class="mobile-link block px-4 py-3 rounded-xl text-stone-600 hover:text-cookie-700 hover:bg-cookie-50 font-medium transition-all duration-200">Reviews</a>
+        <a href="#menu"    class="mobile-link block text-center bg-cookie-700 hover:bg-cookie-800 text-white font-semibold px-5 py-3 rounded-full transition-all duration-300 mt-2">Order Now</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-0">
+
+      <div class="absolute top-20 right-0 w-72 h-72 md:w-[500px] md:h-[500px] bg-cookie-200/40 rounded-full blur-3xl -z-10"></div>
+      <div class="absolute bottom-10 left-0 w-60 h-60 md:w-96 md:h-96 bg-amber-100/50 rounded-full blur-3xl -z-10"></div>
+      <div class="absolute top-1/3 left-1/4 w-32 h-32 bg-orange-100/30 rounded-full blur-2xl -z-10"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 py-12 lg:py-0">
+
+          <div class="flex-1 text-center lg:text-left space-y-6 lg:space-y-8">
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-extrabold text-cookie-900 leading-tight">
+              Freshly Baked,<br />
+              <span class="text-cookie-500">Made to Make</span><br />
+              You Smile.
+            </h1>
+
+            <p class="text-base sm:text-lg text-stone-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Soft, chewy, and baked with love. Discover your new favorite cookies, made fresh for every sweet moment.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+              <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cookie-700 hover:bg-cookie-800 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-cookie-700/20 active:scale-95 text-base">
+                Order Now
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              </a>
+              <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-cookie-300 text-cookie-700 hover:bg-cookie-100 hover:border-cookie-400 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 active:scale-95 text-base">
+                Explore Cookies
+              </a>
+            </div>
+
+            <div class="flex items-center gap-4 justify-center lg:justify-start pt-2 text-sm text-stone-400">
+              <span class="flex items-center gap-1">⭐ 4.9/5 Rating</span>
+              <span class="w-1 h-1 bg-stone-300 rounded-full"></span>
+              <span>2,000+ Happy Customers</span>
+            </div>
+          </div>
+
+          <div class="flex-1 flex justify-center lg:justify-end relative">
+            <div class="absolute inset-0 flex items-center justify-center -z-10">
+              <div class="w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] bg-cookie-200/50 rounded-full"></div>
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80"
+              alt="Stack of freshly baked chocolate chip cookies"
+              class="w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] object-cover rounded-full shadow-2xl shadow-cookie-400/20 border-4 border-white/60"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14 reveal">
+          <span class="text-sm font-semibold text-cookie-500 uppercase tracking-widest">Why Choose Us</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-cookie-900 mt-3">What Makes Us Special</h2>
+          <p class="text-stone-400 mt-4 max-w-xl mx-auto">Every cookie we bake carries a promise of quality, freshness, and a whole lot of love.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+          <div class="reveal group bg-cookie-50 hover:bg-cookie-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:shadow-cookie-200/50 hover:-translate-y-1">
+            <div class="w-16 h-16 mx-auto bg-cookie-200/60 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300">🍪</div>
+            <h3 class="text-lg font-bold text-cookie-800 mb-2">Freshly Baked</h3>
+            <p class="text-sm text-stone-500 leading-relaxed">Baked fresh to keep every bite delicious and perfectly soft.</p>
+          </div>
+
+          <div class="reveal group bg-cookie-50 hover:bg-cookie-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:shadow-cookie-200/50 hover:-translate-y-1">
+            <div class="w-16 h-16 mx-auto bg-red-100/60 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300">❤️</div>
+            <h3 class="text-lg font-bold text-cookie-800 mb-2">Made with Love</h3>
+            <p class="text-sm text-stone-500 leading-relaxed">Carefully crafted with passion and quality ingredients.</p>
+          </div>
+
+          <div class="reveal group bg-cookie-50 hover:bg-cookie-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:shadow-cookie-200/50 hover:-translate-y-1">
+            <div class="w-16 h-16 mx-auto bg-amber-100/60 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300">🌾</div>
+            <h3 class="text-lg font-bold text-cookie-800 mb-2">Premium Ingredients</h3>
+            <p class="text-sm text-stone-500 leading-relaxed">Only selected, high-quality ingredients go into every cookie.</p>
+          </div>
+
+          <div class="reveal group bg-cookie-50 hover:bg-cookie-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:shadow-cookie-200/50 hover:-translate-y-1">
+            <div class="w-16 h-16 mx-auto bg-green-100/60 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300">🚚</div>
+            <h3 class="text-lg font-bold text-cookie-800 mb-2">Fast Delivery</h3>
+            <p class="text-sm text-stone-500 leading-relaxed">Your cookies arrive fresh, fast, and ready to enjoy.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="menu" class="py-20 lg:py-28 bg-cookie-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14 reveal">
+          <span class="text-sm font-semibold text-cookie-500 uppercase tracking-widest">Our Menu</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-cookie-900 mt-3">Meet Our Best Sellers</h2>
+          <p class="text-stone-400 mt-4 max-w-xl mx-auto">Handpicked favorites that keep our customers coming back for more.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+          <div class="reveal group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-cookie-200/40 transition-all duration-300 hover:-translate-y-1">
+            <div class="relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&q=80" alt="Classic Chocolate Chip Cookies" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-cookie-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">⭐ Best Seller</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-cookie-800">Classic Chocolate Chip</h3>
+              <p class="text-sm text-stone-400 mt-1 leading-relaxed">Timeless classic with rich chocolate chips in every bite.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-lg font-bold text-cookie-600">Rp17.000</span>
+                <button data-product="Classic Chocolate Chip" class="add-to-cart bg-cookie-700 hover:bg-cookie-800 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-cookie-400 focus:ring-offset-2">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-cookie-200/40 transition-all duration-300 hover:-translate-y-1">
+            <div class="relative overflow-hidden">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJzqc8zxUeiQHtG8LfGBX4LEhzZUBEgs48WZc7J20ejw&s=10" alt="Double Chocolate Cookies" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-cookie-800">Double Chocolate</h3>
+              <p class="text-sm text-stone-400 mt-1 leading-relaxed">For the ultimate chocolate lover, double the cocoa, double the joy.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-lg font-bold text-cookie-600">Rp20.000</span>
+                <button data-product="Double Chocolate" class="add-to-cart bg-cookie-700 hover:bg-cookie-800 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-cookie-400 focus:ring-offset-2">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-cookie-200/40 transition-all duration-300 hover:-translate-y-1">
+            <div class="relative overflow-hidden">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7QszwdMv4ChFcofPtOpJfqIZC0yLqHFA7jsAxF6JieQ&s=10" alt="Red Velvet Cookies" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">🔥 Popular</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-cookie-800">Red Velvet</h3>
+              <p class="text-sm text-stone-400 mt-1 leading-relaxed">Velvety smooth with a hint of cocoa and cream cheese swirl.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-lg font-bold text-cookie-600">Rp24.000</span>
+                <button data-product="Red Velvet" class="add-to-cart bg-cookie-700 hover:bg-cookie-800 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-cookie-400 focus:ring-offset-2">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-cookie-200/40 transition-all duration-300 hover:-translate-y-1">
+            <div class="relative overflow-hidden">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkGYliYPH_9wNbpsXpU8kntsfiyNJFkm28lSPQquSGypHrGyv8blxMQjg&s=10" alt="Matcha White Chocolate Cookies" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-cookie-800">Matcha White Choco</h3>
+              <p class="text-sm text-stone-400 mt-1 leading-relaxed">Premium matcha meets creamy white chocolate.</p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-lg font-bold text-cookie-600">Rp27.000</span>
+                <button data-product="Matcha White Choco" class="add-to-cart bg-cookie-700 hover:bg-cookie-800 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-cookie-400 focus:ring-offset-2">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="relative py-20 lg:py-28 bg-gradient-to-br from-cookie-800 via-cookie-700 to-cookie-900 overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-cookie-600/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+        <span class="inline-block bg-white/10 text-cookie-200 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+          🎉 Limited Time Offer
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+          Sweet Deal for Your<br />Sweet Day
+        </h2>
+        <p class="text-cookie-200 text-lg sm:text-xl mt-5 max-w-lg mx-auto">
+          Get <span class="text-white font-bold text-2xl">20% OFF</span> your first order. Because everyone deserves a sweet start.
+        </p>
+        <a href="#menu" class="inline-flex items-center gap-2 bg-white hover:bg-cookie-50 text-cookie-800 font-bold px-8 py-4 rounded-full mt-8 transition-all duration-300 hover:shadow-xl hover:shadow-white/10 active:scale-95 text-base">
+          Claim Your Treat
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </div>
+    </section>
+
+
+    <section id="reviews" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14 reveal">
+          <span class="text-sm font-semibold text-cookie-500 uppercase tracking-widest">Testimonials</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-cookie-900 mt-3">What Our Cookie Lovers Say</h2>
+          <p class="text-stone-400 mt-4 max-w-xl mx-auto">Real love from real cookie fans.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+          <div class="reveal bg-cookie-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-cookie-100 hover:-translate-y-1">
+            <div class="flex gap-0.5 text-amber-400 text-lg mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-stone-600 leading-relaxed italic">"Wuenak rek kukisnya auto beli lagi."</p>
+            <div class="flex items-center gap-3 mt-6 pt-5 border-t border-cookie-200/60">
+              <div class="w-10 h-10 bg-cookie-300 rounded-full flex items-center justify-center text-white font-bold text-sm">F</div>
+              <div>
+                <p class="font-semibold text-cookie-800 text-sm">Fabian</p>
+                <p class="text-xs text-stone-400">Loyal Customer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal bg-cookie-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-cookie-100 hover:-translate-y-1">
+            <div class="flex gap-0.5 text-amber-400 text-lg mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-stone-600 leading-relaxed italic">"Bentuknya imut dan lucu ih."</p>
+            <div class="flex items-center gap-3 mt-6 pt-5 border-t border-cookie-200/60">
+              <div class="w-10 h-10 bg-cookie-400 rounded-full flex items-center justify-center text-white font-bold text-sm">N</div>
+              <div>
+                <p class="font-semibold text-cookie-800 text-sm">Nopal</p>
+                <p class="text-xs text-stone-400">Happy Customer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal bg-cookie-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-cookie-100 hover:-translate-y-1">
+            <div class="flex gap-0.5 text-amber-400 text-lg mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-stone-600 leading-relaxed italic">"Menggugah selera banget, rekomen bagi pecinta kukis"</p>
+            <div class="flex items-center gap-3 mt-6 pt-5 border-t border-cookie-200/60">
+              <div class="w-10 h-10 bg-cookie-500 rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+              <div>
+                <p class="font-semibold text-cookie-800 text-sm">Arpin</p>
+                <p class="text-xs text-stone-400">Cookie Enthusiast</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-20 lg:py-28 bg-cookie-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <div class="text-6xl mb-6">🍪</div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-cookie-900 leading-tight">
+          Ready for Your Next<br />Cookie Fix?
+        </h2>
+        <p class="text-stone-400 text-lg mt-5 max-w-md mx-auto">
+          One bite is all it takes. Order now and let the sweetness come to you.
+        </p>
+        <a href="#menu" class="inline-flex items-center gap-2 bg-cookie-700 hover:bg-cookie-800 text-white font-bold px-10 py-4 rounded-full mt-8 transition-all duration-300 hover:shadow-xl hover:shadow-cookie-700/20 active:scale-95 text-base">
+          Order Your Cookies
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="bg-cookie-900 text-cookie-200 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-cookie-800">
+
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="#home" class="flex items-center gap-2 mb-4">
+            <span class="text-3xl">🍪</span>
+            <span class="text-xl font-serif font-bold text-white">KuKis <span class="text-cookie-400">Cookies.</span></span>
+          </a>
+          <p class="text-sm text-cookie-300 leading-relaxed max-w-xs">
+            Freshly baked cookies made with love and premium ingredients. Bringing sweetness to your doorstep since 2024.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#home"    class="text-sm text-cookie-300 hover:text-white transition-colors duration-200">Home</a></li>
+            <li><a href="#menu"    class="text-sm text-cookie-300 hover:text-white transition-colors duration-200">Our Menu</a></li>
+            <li><a href="#about"   class="text-sm text-cookie-300 hover:text-white transition-colors duration-200">About Us</a></li>
+            <li><a href="#reviews" class="text-sm text-cookie-300 hover:text-white transition-colors duration-200">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+          <ul class="space-y-2.5 text-sm text-cookie-300">
+            <li class="flex items-center gap-2"><span>📍</span> Jl. jalan No.77, Jember</li>
+            <li class="flex items-center gap-2"><span>📞</span> +62 812 3456 7890</li>
+            <li class="flex items-center gap-2"><span>✉️</span> hello@kukiscookies.id</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Follow Us</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 bg-cookie-800 hover:bg-cookie-700 rounded-xl flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-cookie-800 hover:bg-cookie-700 rounded-xl flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5" aria-label="TikTok">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.49a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.98a8.21 8.21 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.41z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-cookie-800 hover:bg-cookie-700 rounded-xl flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5" aria-label="Twitter / X">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+          <p class="text-xs text-cookie-400 mt-4">@kukiscookies.id</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 text-center">
+        <p class="text-sm text-cookie-400">© 2026 KuKis Cookies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
+    <div class="bg-cookie-800 text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-sm font-medium">
+      <span class="text-lg">✅</span>
+      <span id="toastMsg">Added to cart!</span>
+    </div>
+  </div>
+
+</body>
+</html>
